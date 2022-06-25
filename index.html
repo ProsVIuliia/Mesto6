@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" type="text/css" href="./pages/index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mesto</title>
+  <meta name="description" content="Сервис Mesto">
+</head>
+<body class="page">
+ <header class="header">
+   <img src="./images/logo.svg" alt="Место" class="header__logo">
+ </header>
+ <main class="content">
+   <section class="profile">
+     <img src="./images/ava.svg" alt="Жак-Ив Кусто" class="profile__avatar">
+    <div class="profile__info">
+      <h1 class="profile__name">Жак-Ив Кусто</h1>
+      <p class="profile__description">Исследователь океана</p>
+      <button class="profile__button" type="button" aria-label="Редактировать"></button>
+    </div>
+    <button class="profile__add" type="button">Добавить фото</button>
+   </section>
+   <section class="elements" aria-label="Карточки с изображениями">
+    <template id="card">
+      <article class="element">
+        <img class="element__image" src="default" alt="">
+        <button class="element__delete" aria-label="Удалить" type="button"></button>
+        <h2 class="element__title"></h2>
+        <button class="element__like" aria-label="Лайк" type="button"></button>
+      </article>
+    </template>
+  </section>
+</main>
+<footer class="footer">
+  <p class="footer__copyright">© 2022. Просвирнина Юлия</p>
+</footer>
+
+<div class="popup popup_for_edit-author">
+  <div class="popup__container">
+    <button class="popup__close-button" aria-label="Закрыть" type="button"></button>
+    <form class="form form_for_edit-author">
+      <h2 class="form__title">Редактировать профиль</h2>
+      <input type="text" value="Жак-Ив Кусто" placeholder="Имя" class="form__input form__input_type_name" name="profile-name" id="profile-name" minlength="2" maxlength="40" required />
+      <span class="form__input-error name-author-input-error"></span> 
+      <input type="text" value="Исследователь океана" placeholder="Работа" class="form__input form__submit" name="profile-job" id="profile-job" minlength="2" maxlength="200" required />
+      <span class="form__input-error name-author-job-input-error"></span>
+      <button class="form__save" type="submit">Сохранить</button>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup_for_add-card">
+  <div class="popup__container">
+    <button class="popup__close-button" aria-label="Закрытие формы" type="button"></button>
+    <form class="form form_for_add-card" novalidate>
+      <h2 class="form__title">Новое место</h2>
+      <input class="form__input form__input_info_name-card" id="name-card-input" placeholder="Название" type="text"
+        minlength="2" maxlength="30" required />
+      <span class="form__input-error name-card-input-error"></span>
+      <input class="form__input form__input_info_link-img" id="link-img-input" placeholder="Ссылка на картинку"
+        type="url" required />
+      <span class="form__input-error link-img-input-error"></span>
+      <button class="form__save" type="submit">Создать</button>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup_for_scale-image">
+  <div class="popup__container">
+    <button class="popup__close-button" aria-label="Закрыть" type="button"></button>
+    <form class="form form_for_scale-image">
+      <figure class="form__image-container">
+        <img class="form__image" src="URL" alt="">
+        <figcaption class="form__image-title"></figcaption>
+      </figure>
+    </form>
+  </div>
+</div>
+
+<script src="./scripts/cards.js"></script>
+<script src="./scripts/index.js"></script>
+<script src="./scripts/FormValidator.js"></script>
+</body>
+</html>
